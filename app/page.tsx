@@ -10,8 +10,18 @@ export default function Home() {
     <main
       className={`${myFont.className} relative min-h-screen overflow-hidden bg-pink-100`}
     >
-      <h1 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-4xl tracking-tight sm:text-5xl">
-        James Moss
+      <h1
+        className={`${myFont.className} absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-4xl tracking-tight sm:text-5xl`}      >
+        <span className="text-red-500 [text-shadow:-2px_-2px_0_white,2px_-2px_0_white,-2px_2px_0_white,2px_2px_0_white,0_0_2px_white]" >J</span>
+        <span className="text-orange-500 [text-shadow:-2px_-2px_0_white,2px_-2px_0_white,-2px_2px_0_white,2px_2px_0_white,0_0_2px_white]">a</span>
+        <span className="text-yellow-400 [text-shadow:-2px_-2px_0_white,2px_-2px_0_white,-2px_2px_0_white,2px_2px_0_white,0_0_2px_white]">m</span>
+        <span className="text-green-500 [text-shadow:-2px_-2px_0_white,2px_-2px_0_white,-2px_2px_0_white,2px_2px_0_white,0_0_2px_white]">e</span>
+        <span className="text-blue-500 [text-shadow:-2px_-2px_0_white,2px_-2px_0_white,-2px_2px_0_white,2px_2px_0_white,0_0_2px_white]">s</span>
+        <span className="text-purple-500 [text-shadow:-2px_-2px_0_white,2px_-2px_0_white,-2px_2px_0_white,2px_2px_0_white,0_0_2px_white]"> </span>
+        <span className="text-pink-500 [text-shadow:-2px_-2px_0_white,2px_-2px_0_white,-2px_2px_0_white,2px_2px_0_white,0_0_2px_white]">M</span>
+        <span className="text-red-500 [text-shadow:-2px_-2px_0_white,2px_-2px_0_white,-2px_2px_0_white,2px_2px_0_white,0_0_2px_white]">o</span>
+        <span className="text-orange-500 [text-shadow:-2px_-2px_0_white,2px_-2px_0_white,-2px_2px_0_white,2px_2px_0_white,0_0_2px_white]">s</span>
+        <span className="text-blue-500 [text-shadow:-2px_-2px_0_white,2px_-2px_0_white,-2px_2px_0_white,2px_2px_0_white,0_0_2px_white]">s</span>
       </h1>
 
       <nav className="text-2xl sm:text-3xl">
