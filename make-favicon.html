@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @font-face {
+      font-family: "ComicFontJames";
+      src: url("./fonts/ComicFontJames-Regular.ttf") format("truetype");
+    }
+
+    body {
+      margin: 0;
+      background: #ddd;
+      font-family: sans-serif;
+    }
+
+    canvas {
+      display: block;
+      margin: 20px;
+    }
+
+    button {
+      margin: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <canvas id="canvas" width="512" height="512"></canvas>
+
+  <button onclick="downloadFavicon()">
+    Download favicon
+  </button>
+
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    async function draw() {
+      // Explicitly load the custom font
+      await document.fonts.load(
+        '360px "ComicFontJames"'
+      );
+
+      // Make sure the font is actually available
+      await document.fonts.ready;
+
+      // Clear canvas (transparent)
+      ctx.clearRect(0, 0, 512, 512);
+
+      // Blue circle
+      ctx.beginPath();
+      ctx.arc(256, 256, 240, 0, Math.PI * 2);
+      ctx.fillStyle = "#2563eb";
+      ctx.fill();
+
+      // Red J using the custom font
+      ctx.font = '500px "ComicFontJames"';
+      ctx.fillStyle = "#ef4444";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+
+      ctx.fillText("J", 257, 310);
+    }
+
+    async function downloadFavicon() {
+      // Make sure everything is drawn with the correct font
+      await draw();
+
+      const link = document.createElement("a");
+      link.download = "favicon.png";
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    }
+
+    // Draw when the page loads
+    draw();
+  </script>
+
+</body>
+</html>
