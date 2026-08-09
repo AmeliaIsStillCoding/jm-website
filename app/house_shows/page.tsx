@@ -28,7 +28,7 @@ export default function House_Shows() {
         ← Home
       </Link>
 
-      <p className="mt-8 max-w-3xl text-2xl text-black sm:text-3xl">
+      <p className="mt-8 text-2xl sm:whitespace-nowrap sm:text-3xl">
         Over the last three years of running house shows they have raised over{" "}
         <span className="text-pink-500">£10,000</span> for Palestine
       </p>
