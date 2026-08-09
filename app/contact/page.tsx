@@ -10,9 +10,7 @@ export default function Contact() {
     <main
       className={`${myFont.className} min-h-screen bg-[#fffaf0] px-6 py-8 text-black`}
     >
-      <h1 className="text-5xl text-orange-500">
-        Contact
-      </h1>
+      <h1 className="text-5xl text-orange-500">Contact</h1>
 
       <Link
         href="/"
@@ -21,15 +19,16 @@ export default function Contact() {
         ← Home
       </Link>
 
-      <div className="mt-12">
+      <div className="mt-12 text-3xl">
         <a
           href="https://www.instagram.com/jamesmossnospaces/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-3xl text-black hover:text-orange-500"
+          className="text-black hover:text-orange-500"
         >
           @jamesmossnospaces
         </a>
+        <span className="ml-4 text-xl">on Instagram</span>
       </div>
     </main>
   );

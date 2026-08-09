@@ -28,9 +28,7 @@ export default function Film() {
     <main
       className={`${myFont.className} min-h-screen bg-[#fffaf0] px-6 py-8 text-black`}
     >
-      <h1 className="text-5xl text-green-600">
-        Film
-      </h1>
+      <h1 className="text-5xl text-green-500">Film</h1>
 
       <Link
         href="/"
@@ -43,19 +41,17 @@ export default function Film() {
         {films.map((film) => (
           <div
             key={film.title}
-            className="flex items-center gap-8"
+            className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-8"
           >
-            {/* Title */}
             <a
               href={film.youtube}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-150 text-3xl text-black transition-colors hover:text-green-600"
+              className="max-w-full text-3xl text-black transition-colors hover:text-green-600"
             >
               {film.title}
             </a>
 
-            {/* YouTube thumbnail */}
             <a
               href={film.youtube}
               target="_blank"
@@ -67,7 +63,7 @@ export default function Film() {
                 alt={`${film.title} thumbnail`}
                 width={320}
                 height={180}
-                className="object-cover"
+                className="h-auto w-full max-w-[320px] object-cover"
               />
             </a>
           </div>

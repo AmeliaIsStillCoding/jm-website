@@ -20,7 +20,7 @@ const musics = [
       {
         text: "Live at the Windmill - Lou Smith",
         link: "https://www.youtube.com/watch?v=7idAP-jH-C8",
-      }
+      },
     ],
   },
   {
@@ -39,9 +39,7 @@ export default function Music() {
     <main
       className={`${myFont.className} min-h-screen bg-[#fffaf0] px-6 py-8 text-black`}
     >
-      <h1 className="text-5xl text-blue-500">
-        Music
-      </h1>
+      <h1 className="text-5xl text-blue-500">Music</h1>
 
       <Link
         href="/"
@@ -54,10 +52,9 @@ export default function Music() {
         {musics.map((music) => (
           <div
             key={music.title}
-            className="flex items-center gap-12"
+            className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-12"
           >
-            {/* Logo + title */}
-            <div className="flex w-64 items-center gap-3">
+            <div className="flex items-center gap-3 sm:w-64">
               {music.logo && (
                 <Image
                   src={music.logo}
@@ -68,13 +65,10 @@ export default function Music() {
                 />
               )}
 
-              <p className="text-3xl text-black">
-                {music.title}
-              </p>
+              <p className="text-3xl text-black">{music.title}</p>
             </div>
 
-            {/* Description */}
-            <div className="flex items-center gap-8 text-xl text-black">
+            <div className="flex flex-col items-start gap-3 text-xl text-black sm:flex-row sm:items-center sm:gap-8">
               {music.description.map((part, index) =>
                 part.link ? (
                   <a
@@ -92,14 +86,13 @@ export default function Music() {
               )}
             </div>
 
-            {/* Custom photo */}
             {music.image && (
               <Image
                 src={music.image}
                 alt=""
                 width={320}
                 height={180}
-                className="object-cover"
+                className="h-auto w-full max-w-[320px] object-cover"
               />
             )}
           </div>
