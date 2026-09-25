@@ -26,7 +26,7 @@ export default function BasePage({
 }: BasePageProps) {
 	return (
 		<main
-			className={`${myFont.className} min-h-screen px-6 py-8 text-black`}
+			className={`${myFont.className} min-h-screen px-6 py-8 text-black bg-white `}
 		>
 			<div className="flex items-center gap-8">
 				<Link
