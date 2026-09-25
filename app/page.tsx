@@ -1,78 +1,122 @@
 import localFont from "next/font/local";
 import Link from "next/link";
+import Image from "next/image";
 
 const myFont = localFont({
-  src: "../fonts/ComicFontJames-Regular.ttf",
+	src: "../fonts/ComicFontJames-Regular.ttf",
 });
 
 export default function Home() {
-  return (
-    <main
-      className={`${myFont.className} relative min-h-screen overflow-hidden bg-pink-100`}
-    >
-      <h1
-        className={`${myFont.className} absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-4xl tracking-tight sm:text-5xl`}      >
-        <span className="text-red-500 [text-shadow:-2px_-2px_0_white,2px_-2px_0_white,-2px_2px_0_white,2px_2px_0_white,0_0_2px_white]" >J</span>
-        <span className="text-orange-500 [text-shadow:-2px_-2px_0_white,2px_-2px_0_white,-2px_2px_0_white,2px_2px_0_white,0_0_2px_white]">a</span>
-        <span className="text-yellow-400 [text-shadow:-2px_-2px_0_white,2px_-2px_0_white,-2px_2px_0_white,2px_2px_0_white,0_0_2px_white]">m</span>
-        <span className="text-green-500 [text-shadow:-2px_-2px_0_white,2px_-2px_0_white,-2px_2px_0_white,2px_2px_0_white,0_0_2px_white]">e</span>
-        <span className="text-blue-500 [text-shadow:-2px_-2px_0_white,2px_-2px_0_white,-2px_2px_0_white,2px_2px_0_white,0_0_2px_white]">s</span>
-        <span className="text-purple-500 [text-shadow:-2px_-2px_0_white,2px_-2px_0_white,-2px_2px_0_white,2px_2px_0_white,0_0_2px_white]"> </span>
-        <span className="text-pink-500 [text-shadow:-2px_-2px_0_white,2px_-2px_0_white,-2px_2px_0_white,2px_2px_0_white,0_0_2px_white]">M</span>
-        <span className="text-red-500 [text-shadow:-2px_-2px_0_white,2px_-2px_0_white,-2px_2px_0_white,2px_2px_0_white,0_0_2px_white]">o</span>
-        <span className="text-orange-500 [text-shadow:-2px_-2px_0_white,2px_-2px_0_white,-2px_2px_0_white,2px_2px_0_white,0_0_2px_white]">s</span>
-        <span className="text-blue-500 [text-shadow:-2px_-2px_0_white,2px_-2px_0_white,-2px_2px_0_white,2px_2px_0_white,0_0_2px_white]">s</span>
-      </h1>
+	return (
+		<main
+			className={`${myFont.className} flex min-h-screen flex-col px-6 py-8`}
+		>
+			{/* Title */}
+			<Image
+				src="/assets/james_moss_website_title.png"
+				alt="James Moss Website"
+				width={500}
+				height={100}
+			/>
 
-      <nav className="text-2xl sm:text-3xl">
-        <Link
-          href="/comics"
-          className="group absolute left-[10%] top-[12%] whitespace-nowrap text-red-500 hover:text-green-600 sm:left-[28%] sm:top-[18%]"
-        >
-          <span className="relative z-10">Comics</span>
-          <span className="absolute -inset-6 -z-0 rounded-full bg-white blur-md" />
-        </Link>
+			{/* Main content */}
+			<div className="flex gap-120 px-4 py-4">
 
-        <Link
-          href="/music"
-          className="group absolute right-[10%] top-[22%] whitespace-nowrap text-blue-500 hover:text-orange-500 sm:left-[72%] sm:top-[21%] sm:right-auto"
-        >
-          <span className="relative z-10">Music</span>
-          <span className="absolute -inset-6 -z-0 rounded-full bg-white blur-md" />
-        </Link>
+				{/* Left navigation */}
+				<div className="flex flex-col items-start gap-12">
 
-        <Link
-          href="/film"
-          className="group absolute left-[8%] top-[62%] whitespace-nowrap text-green-500 hover:text-red-500 sm:left-[10%] sm:top-[52%]"
-        >
-          <span className="relative z-10">Film and Music Videos</span>
-          <span className="absolute -inset-6 -z-0 rounded-full bg-white blur-md" />
-        </Link>
+					<Link href="/music" className="hover:outline hover:outline-4 hover:outline-blue-300">
+						<Image
+							src="/assets/music.png"
+							alt="Music"
+							width={120}
+							height={0}
+						/>
+					</Link>
 
-        <Link
-          href="/writing"
-          className="group absolute right-[8%] top-[58%] whitespace-nowrap text-purple-600 hover:text-yellow-400 sm:left-[75%] sm:top-[55%] sm:right-auto"
-        >
-          <span className="relative z-10">Writing</span>
-          <span className="absolute -inset-6 -z-0 rounded-full bg-white blur-md" />
-        </Link>
+					<Link href="/film" className="hover:outline hover:outline-4 hover:outline-yellow-300">
+						<Image
+							src="/assets/film.png"
+							alt="Film"
+							width={120}
+							height={100}
+						/>
+					</Link>
 
-        <Link
-          href="/house_shows"
-          className="group absolute left-1/2 top-[78%] -translate-x-1/2 whitespace-nowrap text-pink-500 hover:text-[#BFFF00] sm:left-[43%] sm:top-[82%] sm:translate-x-0"
-        >
-          <span className="relative z-10">House Shows</span>
-          <span className="absolute -inset-6 -z-0 rounded-full bg-white blur-md" />
-        </Link>
+					<Link href="/comics" className="hover:outline hover:outline-4 hover:outline-green-300">
+						<Image
+							src="/assets/comics.png"
+							alt="Comics"
+							width={120}
+							height={100}
+						/>
+					</Link>
 
-        <Link
-          href="/contact"
-          className="group absolute right-[8%] top-[88%] whitespace-nowrap text-xl text-orange-400 hover:text-blue-500 sm:left-[88%] sm:top-[88%] sm:right-auto"
-        >
-          <span className="relative z-10">Contact</span>
-          <span className="absolute -inset-4 -z-0 rounded-full bg-white blur-md" />
-        </Link>
-      </nav>
-    </main>
-  );
+					<Link href="/writing" className="hover:outline hover:outline-4 hover:outline-pink-300">
+						<Image
+							src="/assets/writing.png"
+							alt="Writing"
+							width={120}
+							height={100}
+						/>
+					</Link>
+
+					<Link href="/shows" className="hover:outline hover:outline-4 hover:outline-orange-300">
+						<Image
+							src="/assets/shows.png"
+							alt="Shows"
+							width={120}
+							height={100}
+						/>
+					</Link>
+
+					<Link href="/reading_group" className="hover:outline hover:outline-4 hover:outline-purple-300">
+						<Image
+							src="/assets/reading_group.png"
+							alt="Reading Group"
+							width={200}
+							height={100}
+						/>
+					</Link>
+
+				</div>
+
+				{/* Right side */}
+				<div className="flex items-start gap-30">
+
+					<Image
+						src="/assets/squiggle.png"
+						alt="Squiggle"
+						width={300}
+						height={100}
+					/>
+
+					{/* Contact / About */}
+					<div className="flex flex-col items-start gap-10 py-80">
+
+						<Link href="/contact" className="hover:outline hover:outline-4 hover:outline-gray-300">
+							<Image
+								src="/assets/contact.png"
+								alt="Contact"
+								width={80}
+								height={100}
+							/>
+						</Link>
+
+						<Link href="/about" className="hover:outline hover:outline-4 hover:outline-red-300">
+							<Image
+								src="/assets/about.png"
+								alt="About"
+								width={80}
+								height={100}
+							/>
+						</Link>
+
+					</div>
+
+				</div>
+
+			</div>
+		</main>
+	);
 }

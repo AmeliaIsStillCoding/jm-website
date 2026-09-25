@@ -1,9 +1,4 @@
-import localFont from "next/font/local";
-import Link from "next/link";
-
-const myFont = localFont({
-  src: "../../fonts/ComicFontJames-Regular.ttf",
-});
+import BasePage from "../base/BasePage";
 
 const comics = [
   {
@@ -18,17 +13,12 @@ const comics = [
 
 export default function Comics() {
   return (
-    <main
-      className={`${myFont.className} min-h-screen bg-[#fffaf0] px-6 py-8 text-black`}
-    >
-      <h1 className="text-5xl text-red-500">Comics</h1>
-
-      <Link
-        href="/"
-        className="inline-block px-4 py-2 text-xl text-black hover:text-red-500"
+     <BasePage
+        titleImage="/assets/comics.png"
+        titleAlt="Comics"
+        highlightOutline="outline-green-300"
+        hoverOutline="hover:outline-green-300"
       >
-        ← Home
-      </Link>
 
       <div className="mt-12 grid grid-cols-1 gap-12 sm:grid-cols-2">
         {comics.map((comic) => (
@@ -40,7 +30,7 @@ export default function Comics() {
               href={comic.pdf}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-3xl text-black transition-colors hover:text-red-500"
+              className="text-3xl text-black transition-colors hover:text-green-300"
             >
               {comic.title}
             </a>
@@ -59,6 +49,6 @@ export default function Comics() {
           </div>
         ))}
       </div>
-    </main>
+    </BasePage>
   );
 }

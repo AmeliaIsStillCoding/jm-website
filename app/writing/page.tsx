@@ -1,9 +1,4 @@
-import localFont from "next/font/local";
-import Link from "next/link";
-
-const myFont = localFont({
-  src: "../../fonts/ComicFontJames-Regular.ttf",
-});
+import BasePage from "../base/BasePage";
 
 const writings = [
   {
@@ -14,17 +9,12 @@ const writings = [
 
 export default function Writing() {
   return (
-    <main
-      className={`${myFont.className} min-h-screen bg-[#fffaf0] px-6 py-8 text-black`}
+    <BasePage
+    titleImage="/assets/writing.png"
+    titleAlt="Writing"
+      highlightOutline="outline-pink-300"
+      hoverOutline="hover:outline-pink-300"
     >
-      <h1 className="text-5xl text-purple-500">Writing</h1>
-
-      <Link
-        href="/"
-        className="inline-block px-4 py-2 text-xl text-black hover:text-purple-500"
-      >
-        ← Home
-      </Link>
 
       <div className="mt-12 grid grid-cols-1 gap-12 sm:grid-cols-2">
         {writings.map((writing) => (
@@ -36,7 +26,7 @@ export default function Writing() {
               href={writing.pdf}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-3xl text-black transition-colors hover:text-purple-500"
+              className="text-3xl text-black transition-colors hover:text-pink-300"
             >
               {writing.title}
             </a>
@@ -55,6 +45,6 @@ export default function Writing() {
           </div>
         ))}
       </div>
-    </main>
+    </BasePage>
   );
 }

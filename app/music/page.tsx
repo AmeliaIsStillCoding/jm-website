@@ -1,10 +1,5 @@
-import localFont from "next/font/local";
-import Link from "next/link";
 import Image from "next/image";
-
-const myFont = localFont({
-  src: "../../fonts/ComicFontJames-Regular.ttf",
-});
+import BasePage from "../base/BasePage";
 
 const musics = [
   {
@@ -36,17 +31,12 @@ const musics = [
 
 export default function Music() {
   return (
-    <main
-      className={`${myFont.className} min-h-screen bg-[#fffaf0] px-6 py-8 text-black`}
-    >
-      <h1 className="text-5xl text-blue-500">Music</h1>
-
-      <Link
-        href="/"
-        className="inline-block px-4 py-2 text-xl text-black hover:text-blue-500"
+      <BasePage
+      	titleImage="/assets/music.png"
+			  titleAlt="Music"
+        highlightOutline="outline-blue-300"
+        hoverOutline="hover:outline-blue-300"
       >
-        ← Home
-      </Link>
 
       <div className="mt-12 flex flex-col gap-12">
         {musics.map((music) => (
@@ -76,7 +66,7 @@ export default function Music() {
                     href={part.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-blue-500"
+                    className="hover:text-blue-300"
                   >
                     {part.text}
                   </a>
@@ -98,6 +88,6 @@ export default function Music() {
           </div>
         ))}
       </div>
-    </main>
+    </BasePage>
   );
 }

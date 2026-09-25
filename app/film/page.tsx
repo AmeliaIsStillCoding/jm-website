@@ -1,10 +1,5 @@
-import localFont from "next/font/local";
-import Link from "next/link";
 import Image from "next/image";
-
-const myFont = localFont({
-  src: "../../fonts/ComicFontJames-Regular.ttf",
-});
+import BasePage from "../base/BasePage";
 
 const films = [
   {
@@ -25,17 +20,12 @@ function getYoutubeThumbnail(url: string) {
 
 export default function Film() {
   return (
-    <main
-      className={`${myFont.className} min-h-screen bg-[#fffaf0] px-6 py-8 text-black`}
+    <BasePage
+      titleImage="/assets/film.png"
+      titleAlt="Film"
+      highlightOutline="outline-yellow-300"
+      hoverOutline="hover:outline-yellow-300"
     >
-      <h1 className="text-5xl text-green-500">Film</h1>
-
-      <Link
-        href="/"
-        className="inline-block px-4 py-2 text-xl text-black hover:text-green-600"
-      >
-        ← Home
-      </Link>
 
       <div className="mt-12 flex flex-col gap-12">
         {films.map((film) => (
@@ -47,7 +37,7 @@ export default function Film() {
               href={film.youtube}
               target="_blank"
               rel="noopener noreferrer"
-              className="max-w-full text-3xl text-black transition-colors hover:text-green-600"
+              className="max-w-full text-3xl text-black transition-colors hover:text-yellow-300"
             >
               {film.title}
             </a>
@@ -69,6 +59,6 @@ export default function Film() {
           </div>
         ))}
       </div>
-    </main>
+    </BasePage>
   );
 }
