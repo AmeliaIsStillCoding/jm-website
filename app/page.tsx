@@ -9,7 +9,7 @@ const myFont = localFont({
 export default function Home() {
 	return (
 		<main
-			className={`${myFont.className} flex min-h-screen flex-col px-6 py-8`}
+			className={`${myFont.className} min-h-screen bg-white px-6 py-8 text-black`}
 		>
 			{/* Title */}
 			<Image
@@ -17,10 +17,11 @@ export default function Home() {
 				alt="James Moss Website"
 				width={500}
 				height={100}
+				className="h-auto max-w-full"
 			/>
 
 			{/* Main content */}
-			<div className="flex gap-120 px-4 py-4">
+			<div className="flex flex-col gap-12 px-4 py-4 md:flex-row md:gap-120">
 
 				{/* Left navigation */}
 				<div className="flex flex-col items-start gap-12">
@@ -30,7 +31,7 @@ export default function Home() {
 							src="/assets/music.png"
 							alt="Music"
 							width={120}
-							height={0}
+							height={100}
 						/>
 					</Link>
 
@@ -82,17 +83,18 @@ export default function Home() {
 				</div>
 
 				{/* Right side */}
-				<div className="flex items-start gap-30">
+				<div className="flex flex-col items-start gap-8 md:flex-row md:gap-30">
 
 					<Image
 						src="/assets/squiggle.png"
 						alt="Squiggle"
 						width={300}
 						height={100}
+						className="h-auto max-w-full"
 					/>
 
 					{/* Contact / About */}
-					<div className="flex flex-col items-start gap-10 py-80">
+					<div className="flex flex-col items-start gap-10 py-4 md:py-80">
 
 						<Link href="/contact" className="hover:outline hover:outline-4 hover:outline-gray-300">
 							<Image
